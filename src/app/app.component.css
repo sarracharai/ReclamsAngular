@@ -1,0 +1,58 @@
+.card {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px; /* Réduire la marge */
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.02); /* Ajuster l'échelle au survol */
+}
+
+.field_media_image {
+  margin: 5px; /* Réduire la marge */
+  text-align: center;
+}
+
+.card .field_media_image img {
+  width: 65px; /* Réduire la largeur de l'image */
+  height: 65px; /* Réduire la hauteur de l'image */
+  border-radius: 50%;
+  border: 2px solid #007bff;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card .field_media_image img:hover {
+  transform: scale(1.1);
+}
+
+.card .field_media_image h3 {
+  font-size: 16px; /* Réduire la taille du texte */
+  margin-top: 5px; /* Réduire la marge */
+  color: #333;
+}
+
+.container {
+  text-align: center;
+}
+
+.footer {
+  padding: 10px; /* Réduire le rembourrage */
+  background-color: #f8f9fa;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+.navbar-dark-blue {
+  background-color: #74D0F1; /* Couleur de fond bleu foncé ajustée */
+}

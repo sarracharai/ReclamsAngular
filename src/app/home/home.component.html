@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="home.component.css">
+</head>
+<body>
+    <div id="sidebar" class="sidebar">
+        <div>
+            <!-- <h1 class="title">Sidebar</h1> -->
+            <ul class="menu">
+                <li class="menu-item"><a routerLink="/home"><i class="fas fa-home"></i> Reclamation</a></li>
+                <li class="menu-item"><a routerLink="/identifications"><i class="fas fa-user"></i> Identification</a></li>
+                <li class="menu-item"><a routerLink="/reclamations"><i class="fas fa-info-circle"></i> MesReclamations</a></li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: auto; margin-bottom: 25px;">
+            <img src="assets/tunisiett.jpg" alt="" width="70" height="70">
+        </div>
+    </div>
+<!-- **** -->
+    <div class="container">
+        <div>
+            <h2>Ajouter une Reclamation :</h2>
+        </div>
+        <form>
+            <div  class="col-sm-2 col-md-2 col-lg-2"> 
+                <label> Reference</label> <input type="text"
+                    [(ngModel)]="newReclamation.reference" name="reference" class="form-control">
+             </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <label>Nom Societe</label> <input type="text"
+                    [(ngModel)]="newReclamation.societe" name="societe" class="form-control">
+             </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <label>Date Reclamation</label> <input type="date"
+                    [(ngModel)]="newReclamation.dateReclamation" name="dateReclamation" class="form-control">
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <label>Annee</label> <input type="text"
+                    [(ngModel)]="newReclamation.annee" name="annee" class="form-control">
+            </div>
+
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                 <label>Nombre Semaines</label> <input type="number"
+                    [(ngModel)]="newReclamation.nbSemaine" name="nbSemaine" class="form-control">
+             </div>
+
+
+             <div class="col-sm-4 col-md-4 col-lg-4">
+                <label for="objetRecalamation">Objet de Réclamation</label>
+                <select id="objetRecalamation" [(ngModel)]="newReclamation.objetRecalamation" name="objetRecalamation" class="form-control">
+                    <option value="DUPLICATA DE LA CARTE">DUPLICATA DE LA CARTE</option>
+                    <option value="AUTRE RECLAMATIONS TIERS PAYANT">AUTRE RECLAMATIONS TIERS PAYANT</option>
+                    <option value="CARTE NON PARVENUE">CARTE NON PARVENUE</option>
+                    <option value="CENTRE D'IMAGERIE">CENTRE D'IMAGERIE</option>
+                    <option value="CLINIQUE">CLINIQUE</option>
+                    <option value="LABORATOIRE">LABORATOIRE</option>
+                    <option value="PHARMACIE">PHARMACIE</option>
+                    <option value="RECTIFICATION DE LA CARTE">RECTIFICATION DE LA CARTE </option>
+                    <!-- Ajoutez d'autres options au besoin -->
+                </select>
+            </div>
+                    
+
+            <div class="mt-2"> <button type="submit" (click)="addReclamation()" class="btn btn-success">Ajouter</button>
+             </div>
+        </form>
+    </div>
+
+</body>
+</html>

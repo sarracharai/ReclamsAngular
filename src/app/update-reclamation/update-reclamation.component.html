@@ -1,0 +1,38 @@
+<div class="container">
+    <div>
+        <h2>Modifier une Reclamation :</h2>
+    </div>
+    <form>
+        <div class="col-sm-2 col-md-2 col-lg-2"> <label> Reference</label> <input readonly type="text"
+                [(ngModel)]="currentReclamation.reference" name="reference" class="form-control"> </div>
+        <div class="col-sm-4 col-md-4 col-lg-4"> <label>Nom Societe</label> <input type="text"
+                [(ngModel)]="currentReclamation.societe" name="societe" class="form-control"> </div>
+        <div class="col-sm-4 col-md-4 col-lg-4"><label>Date création</label> <input type="date"
+                [ngModel]="currentReclamation.dateReclamation | date: 'yyyy-MM-dd'"
+                (ngModelChange)=" currentReclamation.dateReclamation= $event" name="dateReclamation"
+                class="form-control"></div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4"> <label>Annee</label> <input type="text"
+                [(ngModel)]="currentReclamation.annee" name="annee" class="form-control"> </div>
+        <div class="col-sm-2 col-md-2 col-lg-2"> <label>Nombre Semaines</label> <input type="number"
+                [(ngModel)]="currentReclamation.nbSemaine" name="nbSemaine" class="form-control">
+         </div>
+         <div class="col-sm-4 col-md-4 col-lg-4">
+                <label for="objetRecalamation">Objet de Réclamation</label>
+                <select id="objetRecalamation" [(ngModel)]="currentReclamation.objetRecalamation" name="objetRecalamation" class="form-control">
+                    <option value="DUPLICATA DE LA CARTE">DUPLICATA DE LA CARTE</option>
+                    <option value="AUTRE RECLAMATIONS TIERS PAYANT">AUTRE RECLAMATIONS TIERS PAYANT</option>
+                    <option value="CARTE NON PARVENUE">CARTE NON PARVENUE</option>
+                    <option value="CENTRE D'IMAGERIE">CENTRE D'IMAGERIE</option>
+                    <option value="CLINIQUE">CLINIQUE</option>
+                    <option value="LABORATOIRE">LABORATOIRE</option>
+                    <option value="PHARMACIE">PHARMACIE</option>
+                    <option value="RECTIFICATION DE LA CARTE">RECTIFICATION DE LA CARTE </option>
+                    <!-- Ajoutez d'autres options au besoin -->
+                </select>
+            </div>
+
+        <div class="mt-2"> <button type="submit" (click)="updateReclamation()" class="btn btn-success">Modifer</button>
+        </div>
+    </form>
+</div>
