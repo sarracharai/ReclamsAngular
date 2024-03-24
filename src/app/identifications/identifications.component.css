@@ -1,5 +1,34 @@
-#sidebar {
-    width: 210px;
+
+/* Styles pour le tableau */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.custom-table th, .custom-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.custom-table th {
+    background-color: #f2f2f2;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+  }
+  
+  .text-muted {
+    color: #6c757d;
+  }
+  
+  .navbar-dark-blue {
+    background-color: #74D0F1; /* Couleur de fond bleu foncé ajustée */
+  }
+  #sidebar {
+    width: 200px;
     height: 100vh;
     background-color: #C6CBCF;
     color: #2C3E50;
@@ -23,28 +52,10 @@
 
 .menu-item a {
     text-decoration: none;
-    color: #050505;
+    color: #080808;
     font-size: 16px;
 }
 
 .menu-item i {
     margin-right: 5px;
-}
-
-
-/* Styles pour le tableau */
-.custom-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.custom-table th, .custom-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-.custom-table th {
-    background-color: #f2f2f2;
 }

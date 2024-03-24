@@ -1,33 +1,91 @@
-<div class="container">
-    <form class="form-inline">
-        <div class="form-group mx-sm-3 mb-2 mt-2 ">
-            <label>Objet de Reclamation</label> 
-            <input class="form-control" #searchTerm (keyup)="onKeyUp(searchTerm.value)"> </div>
-    </form>
-    <div class="card shadow mb-4">
-        <div class="card-body">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>reference</th>
-                        <th>societe</th>
-                        <th>dateReclamation</th>
-                        <th>Annee</th>
-                        <th>nbSemaine</th>
-                        <th>objetRecalamation</th>
-                    </tr>
-                </thead>
-                <tbody *ngFor="let reclamation of reclamations">
-                    <tr>
-                        <td>{{reclamation.reference}}</td>
-                        <td>{{reclamation.societe}}</td>
-                        <td>{{reclamation.dateReclamation | date:'dd/MM/yyyy'}}</td>
-                        <td>{{reclamation.annee}}</td>
-                        <td>{{reclamation.nbSemaine}}</td>
-                        <td>{{reclamation.objetRecalamation}}</td>
-                    </tr>
-                </tbody>
-            </table>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Gestion des Reclamations</title>
+    <style>
+        .navbar-dark-blue {
+            background-color: #74D0F1;
+            /* Couleur de fond bleu foncé ajustée */
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .text-muted {
+            color: #6c757d;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<app-navbar></app-navbar>
+<body>
+    
+    
+
+    <div class="container">
+        <form class="form-inline">
+            <div class="form-group mx-sm-3 mb-2 mt-2">
+                <label>Objet de Reclamation</label>
+                <input class="form-control" #searchTerm (keyup)="onKeyUp(searchTerm.value)">
+            </div>
+        </form>
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>reference</th>
+                            <th>societe</th>
+                            <th>dateReclamation</th>
+                            <th>Description</th>
+                            <!-- <th>nbSemaine</th> -->
+                            <th>objetRecalamation</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let reclamation of reclamations">
+                        <tr>
+                            <td>{{reclamation.reference}}</td>
+                            <td>{{reclamation.societe}}</td>
+                            <td>{{reclamation.dateReclamation | date:'dd/MM/yyyy'}}</td>
+                            <td>{{reclamation.description}}</td>
+                            <!-- <td>{{reclamation.nbSemaine}}</td> -->
+                            <td>{{reclamation.objetRecalamation}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
+</body>
+
+</html>

@@ -18,20 +18,22 @@ export class UpdateReclamationComponent implements OnInit {
               private reclamationService: ReclamationService) { }
 
 
-    updateReclamation() {
-    //console.log(this.currentReclamation);
-    this.reclamationService.updateReclamation(this.currentReclamation).subscribe(prod => { 
-      this.router.navigate(['reclamations']); } );
-    
-    
+              updateReclamation() {
+                this.reclamationService.updateReclamation(this.currentReclamation).subscribe(prod => {
+                  this.router.navigate(['/detailsReclam', this.currentReclamation.reference]);
+                });
+              }
+
+    // retourner() {
+    //   this.router.navigate(['/detailsReclam/:reference']);
+    // }
+
+    logout() {
+  
+      this.router.navigate(['/login']);  
     }
 
   ngOnInit(): void {
-
-    // console.log(this.route.snapshot.params.id);
-     //this.currentReclamation = this.reclamationService.consulterReclamation(this.activatedRoute.snapshot. params['reference']);
-      //console.log(this.currentReclamation);
-
 
       this.reclamationService.consulterReclamation(this.activatedRoute.snapshot.params['reference']). 
       subscribe(reclam =>{ this.currentReclamation = reclam; 

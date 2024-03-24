@@ -1,0 +1,32 @@
+<div class="pdf-page">
+  <h1>Détails de la Réclamation</h1>
+  <div>
+    <label>Reference:</label>
+    <span>{{ reclamation.reference }}</span>
+  </div>
+  <div>
+    <label>Société:</label>
+    <span>{{ reclamation.societe }}</span>
+  </div>
+  <div>
+    <label>Date de Réclamation:</label>
+    <span>{{ reclamation.dateReclamation | date:'dd/MM/yyyy' }}</span>
+  </div>
+  <div>
+    <label>Objet de Réclamation:</label>
+    <span>{{ reclamation.objetRecalamation }}</span>
+  </div>
+  <div>
+    <label>Description:</label>
+    <span>{{ reclamation.description }}</span>
+  </div>
+
+  
+
+  <button (click)="annuler()">Annuler</button>
+  <button (click)="editReclamation()">Modifier</button>
+  <button (click)="imprimer()" class="imprimer">Imprimer</button> 
+  <button (click)="valider()">Valider</button>
+</div>
+
+<!-- <button  *ngIf="reclamation.estValide" (click)="imprimer()" class="imprimer">Imprimer</button>  -->

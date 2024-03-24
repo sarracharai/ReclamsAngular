@@ -1,56 +1,50 @@
-<!DOCTYPE html>
+<app-navbar></app-navbar>
 <html lang="fr">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="home.component.css">
 </head>
 <body>
+    
     <div id="sidebar" class="sidebar">
         <div>
             <!-- <h1 class="title">Sidebar</h1> -->
             <ul class="menu">
-                <li class="menu-item"><a routerLink="/home"><i class="fas fa-home"></i> Reclamation</a></li>
-                <li class="menu-item"><a routerLink="/identifications"><i class="fas fa-user"></i> Identification</a></li>
-                <li class="menu-item"><a routerLink="/reclamations"><i class="fas fa-info-circle"></i> MesReclamations</a></li>
+                <li class="menu-item"><a routerLink="/firstpage"><i class="fas fa-home"></i> Home</a></li>
+                <li class="menu-item"><a routerLink="/home"><i class="fas fa-exclamation-circle"></i> Reclamation</a></li>
+                <li class="menu-item"><a routerLink="/identifications"><i class="fas fa-user"></i>
+                        Identification</a></li>
+                <li class="menu-item"><a routerLink="/reclamations"><i class="fas fa-info-circle"></i>
+                        MesReclamations</a></li>
+                <li class="menu-item"><a routerLink="/rechercheParObjet"> <i
+                            class="fas fa-search"></i>Recherher</a></li>
             </ul>
         </div>
-
         <div style="text-align: center; margin-top: auto; margin-bottom: 25px;">
-            <img src="assets/tunisiett.jpg" alt="" width="70" height="70">
+            <img src="./assets/logo.png" alt="" width="70" height="70">
         </div>
     </div>
-<!-- **** -->
+    
     <div class="container">
         <div>
             <h2>Ajouter une Reclamation :</h2>
         </div>
         <form>
-            <div  class="col-sm-2 col-md-2 col-lg-2"> 
+            <div  class="col-sm-2 col-md-2 col-lg-8"> 
                 <label> Reference</label> <input type="text"
                     [(ngModel)]="newReclamation.reference" name="reference" class="form-control">
              </div>
-            <div class="col-sm-4 col-md-4 col-lg-4">
-                <label>Nom Societe</label> <input type="text"
+            <div class="col-sm-4 col-md-4 col-lg-8">
+                <label>Prestataire</label> <input type="text"
                     [(ngModel)]="newReclamation.societe" name="societe" class="form-control">
              </div>
 
-            <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="col-sm-4 col-md-4 col-lg-8">
                 <label>Date Reclamation</label> <input type="date"
                     [(ngModel)]="newReclamation.dateReclamation" name="dateReclamation" class="form-control">
             </div>
 
-            <div class="col-sm-4 col-md-4 col-lg-4">
-                <label>Annee</label> <input type="text"
-                    [(ngModel)]="newReclamation.annee" name="annee" class="form-control">
-            </div>
-
-            <div class="col-sm-2 col-md-2 col-lg-2">
-                 <label>Nombre Semaines</label> <input type="number"
-                    [(ngModel)]="newReclamation.nbSemaine" name="nbSemaine" class="form-control">
-             </div>
-
-
-             <div class="col-sm-4 col-md-4 col-lg-4">
+             <div class="col-sm-4 col-md-4 col-lg-8">
                 <label for="objetRecalamation">Objet de Réclamation</label>
                 <select id="objetRecalamation" [(ngModel)]="newReclamation.objetRecalamation" name="objetRecalamation" class="form-control">
                     <option value="DUPLICATA DE LA CARTE">DUPLICATA DE LA CARTE</option>
@@ -64,10 +58,24 @@
                     <!-- Ajoutez d'autres options au besoin -->
                 </select>
             </div>
-                    
 
-            <div class="mt-2"> <button type="submit" (click)="addReclamation()" class="btn btn-success">Ajouter</button>
-             </div>
+            <div class="col-sm-4 col-md-4 col-lg-8">
+                <label>description</label> <input type="text"
+                    [(ngModel)]="newReclamation.description" name="description" class="form-control">
+            </div>
+                    
+            <div class="mt-4">
+                <button type="submit" (click)="addReclamation()" class="btn btn-success mb-2">Ajouter</button>
+            
+                <!-- Ajout d'un espace entre les boutons -->
+                <div style="width: 10px;"></div>
+            
+                <!-- <button type="button" (click)="consulterReclamation()" class="btn btn-success ml-2 mb-2">Consulter</button> -->
+            </div>
+            
+            
+            
+            
         </form>
     </div>
 

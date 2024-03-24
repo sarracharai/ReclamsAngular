@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+  <div class="row">
+    <div id="sidebar" class="sidebar">
+      <!-- Sidebar content -->
+    </div>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="container">
+        <div class="card shadow mb-4">
+          <div class="card-body">
+            <div class="reclamation-table">
+              <h2>Réclamations Archivées</h2>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Reference</th>
+                    <th>Prestataire</th>
+                    <th>Date Reclamation</th>
+                    <th>Objet de Réclamation</th>
+                    <th>Description</th>
+                    <!-- Add other columns as needed -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Iterate over archived reclamations -->
+                  <tr *ngFor="let archivedReclamation of archivedReclamations">
+                    <td>{{ archivedReclamation.reference }}</td>
+                    <td>{{ archivedReclamation.societe }}</td>
+                    <td>{{ archivedReclamation.dateReclamation | date:'dd/MM/yyyy' }}</td>
+                    <td>{{ archivedReclamation.objetRecalamation }}</td>
+                    <td>{{ archivedReclamation.description }}</td>
+                    <!-- Add other cells as needed -->
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

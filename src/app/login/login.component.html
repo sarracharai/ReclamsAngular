@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Popup Login Form Design | CodingNepal</title>
+      <link rel="stylesheet" href="login.component.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <img src=".\assets\logo.png" alt="Agent Image" class="agent-image">
+      <div class="center">
+         <div class="container">
+            <label for="show" class="close-btn fas fa-times" title="close"></label>
+            <img src=".\assets\logo.png" alt="Agent Image" class="agent-image" width="70" height="50">
+            <div class="text minimize">
+                Reclamations Assurance Maladie
+            </div>
+            <form (ngSubmit)="agentLogin()" class="data" id="show">
+               <div class="data">
+                  <label for="matriculeAgent">Matricule Agent</label>
+                  <input type="text" [(ngModel)]="agent.matriculeAgent" id="matriculeAgent" name="matriculeAgent" placeholder="Enter Matricule Agent" required>
+               </div>
+               <div class="data">
+                  <label for="password">Mot de Passe </label>
+                  <input type="password" [(ngModel)]="agent.password" id="password" name="password" placeholder="Entrer un mot de passe" required>
+               </div>
+               <div class="btn">
+                  <div class="inner"></div>
+                  <button type="submit">Se Connecter </button>
+               </div>
+               <div class="signup-link">
+                  vous n'avez pas un compte? <a href="/register"> S'inscrire</a>
+               </div>
+            </form>
+         </div>
+      </div>
+   </body>
+</html>

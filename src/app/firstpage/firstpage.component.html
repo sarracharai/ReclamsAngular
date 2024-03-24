@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Gestion des Reclamations</title>
+  <style>
+    .card {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="sidebar" class="sidebar">
+    <div>
+        <!-- <h1 class="title">Sidebar</h1> -->
+        <ul class="menu">
+            <li class="menu-item"><a routerLink="/firstpage"><i class="fas fa-home"></i> Home</a></li>
+            <li class="menu-item"><a routerLink="/home"><i class="fas fa-exclamation-circle"></i> Reclamation</a></li>
+            <li class="menu-item"><a routerLink="/identifications"><i class="fas fa-user"></i>
+                    Identification</a></li>
+            <li class="menu-item"><a routerLink="/reclamations"><i class="fas fa-info-circle"></i>
+                    MesReclamations</a></li>
+            <li class="menu-item"><a routerLink="/rechercheParObjet"> <i
+                        class="fas fa-search"></i>Recherher</a></li>
+        </ul>
+    </div>
+    <div style="text-align: center; margin-top:auto; margin-bottom: 25px;">
+        <img src="./assets/logo.png" alt="" width="70" height="70">
+        
+    </div>
+</div>
+
+  <!-- <div class="card">
+    <div class="field_media_image image">
+      <a routerLink="/home">
+        <img src="assets/reclamation.jpg" alt="Description de l'image" width="85" height="85" typeof="foaf:Image">
+      </a>
+      <div>
+        <a routerLink="/home">
+          <h3 style="font-size: 18px; display: block; margin-top: 5px;"> Reclamation Assurance <br> Maladie</h3>
+        </a>
+      </div>
+    </div>
+  </div> -->
+
+  <div style="text-align: center;">
+    
+
+
+  <div style="text-align: center; display: flex; justify-content: center; align-items: center;"> 
+    <img src="./assets/logo.png" loading="lazy" alt="Description de l'image" width="300" height="200" typeof="foaf:Image"
+      style="margin-right: 30px; display: block; margin-top: -680px;">
+    <img src="./assets/gat.png" loading="lazy" alt="Description de l'autre image"
+      width="300" height="150" typeof="foaf:Image" style="margin-right: 1px; display: block; margin-top: -680px;"> 
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,38 +1,149 @@
-<div class="container">
-    <div>
-        <h2>Modifier une Reclamation :</h2>
-    </div>
-    <form>
-        <div class="col-sm-2 col-md-2 col-lg-2"> <label> Reference</label> <input readonly type="text"
-                [(ngModel)]="currentReclamation.reference" name="reference" class="form-control"> </div>
-        <div class="col-sm-4 col-md-4 col-lg-4"> <label>Nom Societe</label> <input type="text"
-                [(ngModel)]="currentReclamation.societe" name="societe" class="form-control"> </div>
-        <div class="col-sm-4 col-md-4 col-lg-4"><label>Date création</label> <input type="date"
-                [ngModel]="currentReclamation.dateReclamation | date: 'yyyy-MM-dd'"
-                (ngModelChange)=" currentReclamation.dateReclamation= $event" name="dateReclamation"
-                class="form-control"></div>
+<!DOCTYPE html>
+<html>
 
-        <div class="col-sm-4 col-md-4 col-lg-4"> <label>Annee</label> <input type="text"
-                [(ngModel)]="currentReclamation.annee" name="annee" class="form-control"> </div>
-        <div class="col-sm-2 col-md-2 col-lg-2"> <label>Nombre Semaines</label> <input type="number"
-                [(ngModel)]="currentReclamation.nbSemaine" name="nbSemaine" class="form-control">
-         </div>
-         <div class="col-sm-4 col-md-4 col-lg-4">
-                <label for="objetRecalamation">Objet de Réclamation</label>
-                <select id="objetRecalamation" [(ngModel)]="currentReclamation.objetRecalamation" name="objetRecalamation" class="form-control">
-                    <option value="DUPLICATA DE LA CARTE">DUPLICATA DE LA CARTE</option>
-                    <option value="AUTRE RECLAMATIONS TIERS PAYANT">AUTRE RECLAMATIONS TIERS PAYANT</option>
-                    <option value="CARTE NON PARVENUE">CARTE NON PARVENUE</option>
-                    <option value="CENTRE D'IMAGERIE">CENTRE D'IMAGERIE</option>
-                    <option value="CLINIQUE">CLINIQUE</option>
-                    <option value="LABORATOIRE">LABORATOIRE</option>
-                    <option value="PHARMACIE">PHARMACIE</option>
-                    <option value="RECTIFICATION DE LA CARTE">RECTIFICATION DE LA CARTE </option>
-                    <!-- Ajoutez d'autres options au besoin -->
-                </select>
+<head>
+    <meta charset="utf-8">
+    <title>Gestion des Reclamations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar-dark-blue {
+            background-color: #74D0F1;
+            /* Couleur de fond bleu foncé ajustée */
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+            color: #fff;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark navbar-dark-blue">
+        <!-- Brand -->
+        <img src="assets/logo.png" alt="Nom de votre logo" width="60" height="40">
+        <a class="navbar-brand" href="#"> Gestion des Reclamations</a>
+    
+        <!-- Links -->
+        <div class="d-flex justify-content-between w-100">
+            <ul class="navbar-nav">
+                <!-- Vos autres liens ici -->
+            </ul>
+    
+            <div class="navbar-deconnexion">
+                <a href="#" class="text-white" (click)="logout()" style="text-decoration: none;">Déconnexion</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div>
+            <h2>Modifier une Reclamation :</h2>
+        </div>
+        <form>
+            <div class="form-group row">
+                <label for="reference" class="col-sm-2 col-form-label">Reference</label>
+                <div class="col-sm-10">
+                    <input readonly type="text" [(ngModel)]="currentReclamation.reference" id="reference"
+                        name="reference" class="form-control">
+                </div>
             </div>
 
-        <div class="mt-2"> <button type="submit" (click)="updateReclamation()" class="btn btn-success">Modifer</button>
-        </div>
-    </form>
-</div>
+            <div class="form-group row">
+                <label for="societe" class="col-sm-2 col-form-label">Prestataire</label>
+                <div class="col-sm-10">
+                    <input type="text" [(ngModel)]="currentReclamation.societe" id="societe" name="societe"
+                        class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="dateReclamation" class="col-sm-2 col-form-label">Date création</label>
+                <div class="col-sm-10">
+                    <input type="date" [ngModel]="currentReclamation.dateReclamation | date: 'yyyy-MM-dd'"
+                        (ngModelChange)="currentReclamation.dateReclamation= $event" id="dateReclamation"
+                        name="dateReclamation" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="objetRecalamation" class="col-sm-2 col-form-label">Objet de Réclamation</label>
+                <div class="col-sm-10">
+                    <select id="objetRecalamation" [(ngModel)]="currentReclamation.objetRecalamation"
+                        name="objetRecalamation" class="form-control">
+                        <option value="DUPLICATA DE LA CARTE">DUPLICATA DE LA CARTE</option>
+                        <option value="AUTRE RECLAMATIONS TIERS PAYANT">AUTRE RECLAMATIONS TIERS PAYANT</option>
+                        <option value="CARTE NON PARVENUE">CARTE NON PARVENUE</option>
+                        <option value="CENTRE D'IMAGERIE">CENTRE D'IMAGERIE</option>
+                        <option value="CLINIQUE">CLINIQUE</option>
+                        <option value="LABORATOIRE">LABORATOIRE</option>
+                        <option value="PHARMACIE">PHARMACIE</option>
+                        <option value="RECTIFICATION DE LA CARTE">RECTIFICATION DE LA CARTE </option>
+                        <!-- Ajoutez d'autres options au besoin -->
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="description" class="col-sm-2 col-form-label">Description</label>
+                <div class="col-sm-10">
+                    <input type="text" [(ngModel)]="currentReclamation.description" id="description"
+                        name="description" class="form-control">
+                </div>
+            </div>
+
+            <div class="mt-2">
+                <button type="submit" (click)="updateReclamation()" class="btn btn-success btn-sm">Modifier</button>
+            </div>
+            <!-- <div class="mt-2">
+                <button type="submit" (click)="retourner()" class="btn btn-success btn-sm">Retourner</button>
+            </div> -->
+            
+        </form>
+    </div>
+</body>
+
+</html>

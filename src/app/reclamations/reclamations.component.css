@@ -34,3 +34,15 @@
 }
 
 
+.nav-link:hover {
+    text-decoration: underline;
+  }
+  
+  .text-muted {
+    color: #6c757d;
+  }
+  
+  .navbar-dark-blue {
+    background-color: #74D0F1; /* Couleur de fond bleu foncé ajustée */
+  }
+

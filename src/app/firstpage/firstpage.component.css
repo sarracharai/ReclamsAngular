@@ -1,0 +1,76 @@
+#sidebar {
+  width: 200px;
+  height: 100vh;
+  background-color: #C6CBCF;
+  color: #2C3E50;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.menu {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.menu-item {
+  margin-bottom: 10px;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: #080808;
+  font-size: 16px;
+}
+
+.menu-item i {
+  margin-right: 5px;
+}
+
+/* Styles pour le tableau */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.custom-table th, .custom-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.custom-table th {
+  background-color: #f2f2f2;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+.navbar-dark-blue {
+  background-color: #74D0F1; /* Couleur de fond bleu foncé ajustée */
+}
+
+
+.images-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px; /* Ajustez la marge selon vos besoins */
+}
+
+
+
+.image {
+  margin: 0 10px; /* Ajustez la marge entre les images selon vos besoins */
+}

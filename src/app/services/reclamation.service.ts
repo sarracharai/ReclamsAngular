@@ -15,6 +15,7 @@ const httpOptions = {
 
 export class ReclamationService {
   apiURL: string = 'http://localhost:8082/reclamations/api';
+  baseUrl="http://localhost:8082/reclamations/agent";
   reclamations! : Reclamation[]; //un tableau de Reclamation
   reclamation! : Reclamation;
   agents! : Agent[];
@@ -23,37 +24,11 @@ export class ReclamationService {
 
   constructor(private http : HttpClient) {
 
-    
-
-     /*this.agents = [ 
-      {matriculeAgent : "11FF", numTel : 23458763, nomAgent :"sarra", prenomAgent :"charaii", adresseAgent :"Nabeul",emailAgent : "sarra@gmail.com", dateNaissance : new Date("12/17/2010")},
-    ];
-/*/
-    /* this.reclamations = [ 
-      {reference : 1, societe : "PC Asus", dateReclamation : new Date("01/14/2011"), annee : "2018" , nbSemaine : 4, objetRecalamation :"MALADIE" , 
-      //agent : {matriculeAgent : "11FF", numTel : 23458763, nomAgent :"sarra", prenomAgent :"charaii", adresseAgent :"Nabeul",emailAgent : "sarra@gmail.com", dateNaissance : new Date("12/17/2010")},
-    },
-
-      {reference : 2, societe : "Imprimante Epson", dateReclamation : new Date("12/17/2010"), annee : "2018" , nbSemaine :3, objetRecalamation :"MALADIE",
-       //agent : {matriculeAgent : "11FF", numTel : 23458763, nomAgent :"sarra", prenomAgent :"charaii", adresseAgent :"Nabeul",emailAgent : "sarra@gmail.com", dateNaissance : new Date("12/17/2010")},
-    },
-
-      {reference : 3, societe :"Tablette Samsung",  dateReclamation : new Date("02/20/2020"), annee : "1017" , nbSemaine :3, objetRecalamation :"MALADIE" ,
-      //agent : {matriculeAgent : "11FF", numTel : 23458763, nomAgent :"sarra", prenomAgent :"charaii", adresseAgent :"Nabeul",emailAgent : "sarra@gmail.com", dateNaissance : new Date("12/17/2010")}
-    }
-    
-    
-      ]; */
     }
 
   listeAgents():Observable<Agent[]> {
-    return this.http.get<Agent[]>(this.apiURL+"/ag"); 
+    return this.http.get<Agent[]>(this.baseUrl); 
     }
-
-
-  // listeReclamation():Reclamation[] {
-  //   return this.reclamations; 
-  //   }
 
   listeReclamation(): Observable<Reclamation[]>{
     return this.http.get<Reclamation[]>(this.apiURL); 
@@ -91,7 +66,6 @@ export class ReclamationService {
 
 
 updateReclamation(reclam:Reclamation) : Observable<Reclamation> { 
- 
   return this.http.put<Reclamation>(this.apiURL, reclam, httpOptions); }
 
 rechercherParNom(annee: string):Observable< Reclamation[]> {
@@ -104,5 +78,18 @@ rechercherParObjet(objetRecalamation: string):Observable< Reclamation[]> {
        return this.http.get<Reclamation[]>(url);
       }
  
+
+      // getLatestReclamation(): Observable<Reclamation> {
+      //   return this.http.get<Reclamation>(`${this.apiURL}/latest`);
+      // }
+
+     
+      // getReclamationsArchivees(): Observable<any[]> {
+      //   return this.http.get<any[]>(`${this.apiURL}/archivees`);
+      // }
+    
+      // archiveReclamation(reference: string): Observable<any> {
+      //   return this.http.put<any>(`${this.apiURL}/archive/${reference}`, {});
+      // }
    
 }

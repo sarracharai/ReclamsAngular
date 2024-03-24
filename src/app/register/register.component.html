@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Registration Form | CodingLab</title>
+  <link rel="stylesheet" href="register.component.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <div class="container">
+    <img src=".\assets\logo.png" alt="Agent Image" class="agent-image" width="90" height="60">
+    <div class="title">Inscription</div>
+    <div class="content">
+      <form (ngSubmit)="agentRegister()">
+        <div class="user-details">
+
+          <div class="input-box">
+            <span class="details">Matricule Agent</span>
+            <input type="text" [(ngModel)]="agent.matriculeAgent" id="matriculeAgent" name="matriculeAgent" placeholder="Entrer votre Matricule" required>
+          </div>
+          
+          <div class="input-box">
+            <span class="details">Nom Agent</span>
+            <input type="text" [(ngModel)]="agent.nomAgent" id="nomAgent" name="nomAgent" placeholder="Entrer votre Nom" required>
+          </div>
+
+          
+
+          <div class="input-box">
+            <span class="details">Prenom Agent</span>
+            <input type="text" [(ngModel)]="agent.prenomAgent" id="prenomAgent" name="prenomAgent" placeholder="Enter your username" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Numero de Cin</span>
+            <input type="cin" [(ngModel)]="agent.cin" id="cin" name="cin" placeholder="Entrer votre numero de Cin" required>
+          </div>
+
+          
+
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" [(ngModel)]="agent.emailAgent" id="emailAgent" name="emailAgent" placeholder="Entrer votre email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Numero Telephone</span>
+            <input type="tel" [(ngModel)]="agent.numTel" id="numTel" name="numTel" placeholder="Entrer votre numero de Telephone" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Mot de Passe</span>
+            <input type="password" [(ngModel)]="agent.password" id="password" name="password" placeholder="Entrer votre mot de passe" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirmer mot de passe</span>
+            <input type="password" [(ngModel)]="agent.password" id="password" name="password" placeholder="Confirmer votre mot de passe" required>
+          </div>
+        </div>
+        
+        <div class="button">
+          <input type="submit" value="S'inscrire">
+
+          <div class="signup-link">
+            <a href="/login"> Se connecter</a>
+           </div>
+           
+        </div>
+
+        
+
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
